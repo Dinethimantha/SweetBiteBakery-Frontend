@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | Sweet Bite Bakery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container nav-container">
+
+        <a href="index.html" class="brand">
+            <div class="logo-placeholder">SB</div>
+            <div class="brand-text">
+                <span class="brand-name">Sweet Bite</span>
+                <span class="brand-subtitle">ARTISAN BAKERY</span>
+            </div>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
+        </nav>
+
+    </div>
+</header>
+
+<main class="orders-page">
+
+    <section class="orders-hero">
+        <div class="orders-hero-inner">
+            <p class="orders-eyebrow">SWEET BITE BAKERY</p>
+            <h1>My Orders</h1>
+            <p class="orders-hero-description">
+                Every order is made with love. View your purchases
+                and follow your order's delivery progress.
+            </p>
+
+            <div class="orders-hero-links">
+                <a href="products.html" class="orders-primary-button">
+                    Explore Products
+                </a>
+                <a href="order-tracking.html" class="orders-secondary-link">
+                    Track an Order
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="orders-content">
+
+        <div class="orders-section-heading">
+            <div>
+                <p class="orders-eyebrow">YOUR BAKERY PURCHASES</p>
+                <h2>Order History</h2>
+                <p>Check your order details and current status below.</p>
+            </div>
+            <a href="products.html" class="orders-continue-link">
+                + Order More
+            </a>
+        </div>
+
+        <section id="orders-list" class="orders-list" aria-live="polite">
+            <!-- Orders are displayed using JavaScript -->
+        </section>
+
+        <section id="no-orders" class="no-orders" hidden>
+            <div class="empty-orders-icon" aria-hidden="true">SB</div>
+            <p class="orders-eyebrow">NOTHING HERE YET</p>
+            <h2>No Orders Yet</h2>
+            <p>
+                Your order history will appear here once you place
+                your first order with Sweet Bite Bakery.
+            </p>
+            <a href="products.html" class="orders-primary-button">
+                Explore Our Products
+            </a>
+        </section>
+
+        <div class="orders-bottom-links">
+            <a href="cart.html">← Back to Cart</a>
+            <a href="index.html">Back to Home</a>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> Sweet Bite Bakery. All rights reserved.</p>
+</footer>
+
+<script src="my-orders.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>

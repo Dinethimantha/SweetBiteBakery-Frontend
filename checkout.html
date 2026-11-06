@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Sweet Bite Bakery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="checkout.js" defer></script>
+</head>
+
+<body>
+<header class="navbar">
+    <a href="index.html" class="brand">
+                <div class="logo-placeholder">SB</div>
+                <div class="brand-text">
+                    <span class="brand-name">Sweet Bite</span>
+                    <span class="brand-subtitle">ARTISAN BAKERY</span>
+                </div>
+            </a>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
+    </nav>
+</header>
+
+
+    <main class="checkout-container">
+
+        <section class="checkout-heading">
+            <h1>Checkout</h1>
+            <p>Complete your order with Sweet Bite Bakery.</p>
+        </section>
+
+        <div class="checkout-layout">
+
+            <!-- CUSTOMER DETAILS -->
+            <section class="checkout-card">
+
+                <h2>Customer Details</h2>
+
+                <form id="checkout-form">
+
+                    <label for="customer-name">Full Name</label>
+                    <input
+                        type="text"
+                        id="customer-name"
+                        name="customerName"
+                        placeholder="Enter your full name"
+                        minlength="2"
+                        required
+                    >
+
+                    <label for="customer-phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="customer-phone"
+                        name="customerPhone"
+                        placeholder="07XXXXXXXX"
+                        pattern="0[0-9]{9}"
+                        title="Enter a 10-digit Sri Lankan phone number"
+                        required
+                    >
+
+                    <label for="customer-email">Email Address (Optional)</label>
+                    <input
+                        type="email"
+                        id="customer-email"
+                        name="customerEmail"
+                        placeholder="example@email.com"
+                    >
+
+                    <label for="customer-address">Delivery Address</label>
+                    <textarea
+                        id="customer-address"
+                        name="customerAddress"
+                        rows="3"
+                        placeholder="Enter your delivery address"
+                        required
+                    ></textarea>
+
+                    <!-- PAYMENT METHODS -->
+                    <h2 class="payment-heading">Payment Method</h2>
+
+                    <label class="payment-option">
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Cash on Delivery"
+                            checked
+                        >
+
+                        <span>
+                            <strong>Cash on Delivery</strong>
+                            <small>Pay when your order arrives.</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Bank Transfer"
+                        >
+
+                        <span>
+                            <strong>Bank Transfer</strong>
+                            <small>Transfer money to our bank account.</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Card Payment (Demo)"
+                        >
+
+                        <span>
+                            <strong>Card Payment </strong>
+                            
+                        </span>
+                    </label>
+
+                    <!-- BANK TRANSFER PANEL -->
+                    <div
+                        id="bank-transfer-panel"
+                        class="bank-transfer-panel"
+                        hidden
+                    >
+
+                        <div class="bank-panel-header">
+                            <div class="bank-icon" aria-hidden="true">
+                                <svg
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                >
+                                    <path d="M3 10h18L12 4 3 10Z"></path>
+                                    <path d="M5 10v8M9 10v8M15 10v8M19 10v8"></path>
+                                    <path d="M3 21h18M4 18h16"></path>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h3>Bank Transfer Payment</h3>
+                                <p>Transfer the order amount to the account below.</p>
+                            </div>
+                        </div>
+
+                        <div class="bank-demo-notice">
+                            <strong> Bank Details</strong>
+                            
+                        </div>
+
+                        <div class="bank-details-card">
+
+                            <div class="bank-detail-row">
+                                <span>Bank Name</span>
+                                <strong>Hatton National Bank</strong>
+                            </div>
+
+                            <div class="bank-detail-row">
+                                <span>Account Holder</span>
+                                <strong>Sweet Bite Bakery</strong>
+                            </div>
+
+                            <div class="bank-detail-row account-number-row">
+                                <div>
+                                    <span>Account Number</span>
+                                    <strong id="bank-account-number">042020100255</strong>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    id="copy-account-btn"
+                                    class="copy-account-btn"
+                                >
+                                    Copy
+                                </button>
+                            </div>
+
+                            <div class="bank-detail-row">
+                                <span>Branch</span>
+                                <strong>Matara Branch</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="transfer-amount-card">
+                            <span>Total Amount to Transfer</span>
+                            <strong id="bank-transfer-amount">LKR 0</strong>
+                        </div>
+
+                        <label for="payment-reference">
+                            Payment Reference Number (Optional)
+                        </label>
+
+                        <input
+                            type="text"
+                            id="payment-reference"
+                            name="paymentReference"
+                            placeholder="Enter bank transaction reference"
+                            maxlength="100"
+                        >
+
+                        <label class="payment-confirm-checkbox">
+                            <input
+                                type="checkbox"
+                                id="transfer-confirmation"
+                            >
+
+                            <span>
+                                I understand that I must complete the bank
+                                transfer separately.
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <!-- CARD PAYMENT DEMO PANEL -->
+                    <div
+                        id="card-payment-panel"
+                        class="bank-transfer-panel"
+                        hidden
+                    >
+
+                        <div class="bank-panel-header">
+                            <div class="bank-icon" aria-hidden="true">
+                                <svg
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                >
+                                    <rect
+                                        x="2"
+                                        y="5"
+                                        width="20"
+                                        height="14"
+                                        rx="2"
+                                    ></rect>
+                                    <path d="M2 10h20"></path>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h3>Card Payment</h3>
+                               
+                            </div>
+                        </div>
+
+                        <div class="bank-demo-notice">
+                            <strong>Card Details</strong>
+                           
+                        </div>
+
+                        <label for="cardholder-name">Cardholder Name</label>
+                        <input
+                            type="text"
+                            id="cardholder-name"
+                            name="cardholderName"
+                            placeholder="Card Holder Name"
+                            autocomplete="off"
+                            maxlength="60"
+                        >
+
+                        <label for="card-number">Card Number</label>
+                        <input
+                            type="text"
+                            id="card-number"
+                            name="cardNumber"
+                            placeholder="1234 5678 9012 3456"
+                            inputmode="numeric"
+                            autocomplete="off"
+                            maxlength="19"
+                            aria-describedby="card-demo-hint"
+                        >
+
+                        <p id="card-demo-hint">
+                           
+                        </p>
+
+                        <div class="checkout-layout">
+                            <div>
+                                <label for="card-expiry">Expiry Date</label>
+                                <input
+                                    type="text"
+                                    id="card-expiry"
+                                    name="cardExpiry"
+                                    placeholder="MM/YY"
+                                    maxlength="5"
+                                    autocomplete="off"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="card-cvv">CVV</label>
+                                <input
+                                    type="password"
+                                    id="card-cvv"
+                                    name="cardCvv"
+                                    placeholder="123"
+                                    inputmode="numeric"
+                                    maxlength="4"
+                                    autocomplete="off"
+                                >
+                            </div>
+                        </div>
+
+                       
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="place-order-btn"
+                        class="btn btn-primary place-order-btn"
+                    >
+                        Place Order
+                    </button>
+
+                    <a href="cart.html" class="back-to-cart">
+                        Back to Cart
+                    </a>
+
+                </form>
+
+            </section>
+
+            <!-- ORDER SUMMARY -->
+            <aside class="checkout-card order-summary-card">
+
+                <h2>Order Summary</h2>
+
+                <div id="checkout-items">
+                    <p>Loading your order...</p>
+                </div>
+
+                <div class="checkout-total-row">
+                    <span>Total</span>
+                    <strong id="checkout-total">LKR 0</strong>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="current-year"></span>
+            Sweet Bite Bakery. All rights reserved.
+        </p>
+    </footer>
+<script src="cart.js"></script>
+</body>
+</html>

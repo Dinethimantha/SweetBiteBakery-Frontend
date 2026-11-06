@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | Sweet Bite Bakery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        /* Track My Order - Always Visible */
+        .cart-tracking-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .cart-tracking-link .track-order-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #204B47;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-tracking-link .track-order-button:hover {
+            background-color: #956034;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+   <a href="index.html" class="brand">
+                <div class="logo-placeholder">SB</div>
+                <div class="brand-text">
+                    <span class="brand-name">Sweet Bite</span>
+                    <span class="brand-subtitle">ARTISAN BAKERY</span>
+                </div>
+            </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-banner">
+        <p class="eyebrow">YOUR SELECTION</p>
+        <h1>Shopping Cart</h1>
+        <p>Review your favourite bakery treats before placing your order.</p>
+    </section>
+
+    <section class="page-section">
+
+        <!-- Cart Products -->
+        <div id="cart-items" class="cart-items"></div>
+
+        <!-- Cart Summary -->
+        <div id="cart-summary" class="cart-summary">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-line">
+                <span>Total</span>
+                <strong id="cart-total">LKR 0</strong>
+            </div>
+
+            <p class="cart-note">
+                
+            </p>
+
+            <button id="checkout-btn" class="btn btn-primary">
+                Place Order
+            </button>
+
+            <button id="clear-cart-btn" class="btn btn-outline">
+                Clear Cart
+            </button>
+
+            <a href="products.html" class="continue-shopping">
+                Continue Shopping
+            </a>
+
+        </div>
+
+        <!-- Track My Order: Always Visible -->
+        <div class="cart-tracking-link">
+            <a href="my-orders.html" class="track-order-button">
+                Track My Order
+            </a>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+
+    <div>
+        <h2>Sweet Bite Bakery</h2>
+        <p>Making life's sweetest moments even more special.</p>
+    </div>
+
+    <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div>
+        <h3>Contact</h3>
+        <p>Colombo, Sri Lanka</p>
+        <p>Phone: +94 77 123 4567</p>
+        <p>Email: sweetbite@example.com</p>
+    </div>
+
+    <p class="copyright">
+        © <span class="current-year"></span> Sweet Bite Bakery. All rights reserved.
+    </p>
+
+</footer>
+
+<script src="cart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

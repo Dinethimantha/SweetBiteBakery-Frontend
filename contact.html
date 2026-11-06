@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Sweet Bite Bakery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Google reCAPTCHA v2 -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="brand">
+        <div class="logo-placeholder">SB</div>
+        <div class="brand-text">
+            <span class="brand-name">Sweet Bite</span>
+            <span class="brand-subtitle">ARTISAN BAKERY</span>
+        </div>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="cart.html">
+            Cart <span id="cart-count" class="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-banner">
+        <p class="eyebrow">WE WOULD LOVE TO HEAR FROM YOU</p>
+        <h1>Get in Touch</h1>
+        <p>Have a question or planning a special celebration? Contact us.</p>
+    </section>
+
+    <section class="page-section">
+
+        <div class="contact-layout">
+
+            <div class="contact-information">
+                <p class="eyebrow">CONTACT DETAILS</p>
+                <h2>Let's Talk About Something Sweet</h2>
+                <p>Get in touch with us for product information and cake enquiries.</p>
+
+                <div class="contact-detail">
+                    <h3>Our Location</h3>
+                    <p>Colombo, Sri Lanka</p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Phone Number</h3>
+                    <p>+94 77 123 4567</p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Email Address</h3>
+                    <p>sweetbite@example.com</p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Opening Hours</h3>
+                    <p>Monday – Saturday: 8.00 AM – 7.00 PM</p>
+                    <p>Sunday: 9.00 AM – 5.00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+
+                <h2>Send Us a Message</h2>
+
+                <!-- novalidate allows SweetAlert2 to show our validation messages -->
+                <form id="contact-form" novalidate>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            maxlength="100"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            maxlength="254"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="What is your enquiry about?"
+                            maxlength="150"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            maxlength="2000"
+                            placeholder="Write your message here..."
+                            required></textarea>
+                    </div>
+
+                    <!-- Random verification code -->
+                    
+<div class="random-code-section">
+    <div class="verification-header">
+        <div class="verification-icon">
+            <i class="fas fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h3>Security Verification</h3>
+            <p>Complete this quick check to continue</p>
+        </div>
+    </div>
+
+    <div class="verification-card">
+        <div class="verification-info">
+            <span class="verification-label">YOUR SECURITY CODE</span>
+            <span class="verification-badge">
+                <i class="fas fa-lock"></i> Secure Check
+            </span>
+        </div>
+
+        <div class="random-code-row">
+            <div id="random-code-display"
+                 class="random-code-display"></div>
+
+            <button type="button"
+                    id="refresh-code-btn"
+                    aria-label="Generate a new verification code"
+                    title="Generate a new code">
+                <i class="fas fa-rotate"></i>
+            </button>
+        </div>
+
+        <label for="random-code-input">
+            Enter the code shown above
+        </label>
+
+        <input type="text"
+               id="random-code-input"
+               name="verificationCode"
+               placeholder="Type your code here"
+               autocomplete="off"
+               maxlength="6"
+               required>
+
+        <p class="verification-hint">
+            <i class="fas fa-circle-info"></i>
+            Can't read the code? Select the refresh button.
+        </p>
+    </div>
+</div>
+
+
+                    <!-- Google reCAPTCHA checkbox -->
+                    <div class="form-group recaptcha-section">
+                        <label>Human Verification</label>
+
+                        <div class="g-recaptcha"
+                             data-sitekey="6LeyfAEuAAAAAFy2Z6onngfxyXGMAQ7s9jbnZkVv">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="page-section map-section">
+        <div class="section-heading">
+            <p class="eyebrow">FIND US</p>
+            <h2>Our Location</h2>
+        </div>
+
+        <iframe
+            title="Map showing Colombo, Sri Lanka"
+            src="https://maps.google.com/maps?q=Colombo%2C%20Sri%20Lanka&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+
+    <div>
+        <h2>Sweet Bite Bakery</h2>
+        <p>Making life's sweetest moments even more special.</p>
+    </div>
+
+    <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div>
+        <h3>Contact</h3>
+        <p>Colombo, Sri Lanka</p>
+        <p>Phone: +94 77 123 4567</p>
+        <p>Email: sweetbite@example.com</p>
+    </div>
+
+    <p class="copyright">
+        © <span class="current-year"></span> Sweet Bite Bakery.
+        All rights reserved.
+    </p>
+
+</footer>
+
+<script src="cart.js"></script>
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const contactForm = document.getElementById("contact-form");
+
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const subjectInput = document.getElementById("subject");
+    const messageInput = document.getElementById("message");
+
+    const randomCodeDisplay =
+        document.getElementById("random-code-display");
+
+    const randomCodeInput =
+        document.getElementById("random-code-input");
+
+    const refreshCodeButton =
+        document.getElementById("refresh-code-btn");
+
+    let generatedCode = "";
+
+    // Generate a random six-character verification code
+    function generateRandomCode() {
+        const characters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+        let code = "";
+
+        for (let i = 0; i < 6; i++) {
+            const randomIndex = Math.floor(
+                Math.random() * characters.length
+            );
+
+            code += characters[randomIndex];
+        }
+
+        generatedCode = code;
+        randomCodeDisplay.textContent = code;
+
+        randomCodeInput.value = "";
+    }
+
+    // Generate the first code
+    generateRandomCode();
+
+    // Refresh code when the button is clicked
+    refreshCodeButton.addEventListener("click", function () {
+        generateRandomCode();
+
+        Swal.fire({
+            icon: "info",
+            title: "New Security Code",
+            text: "A new verification code has been generated.",
+            confirmButtonColor: "#204B47"
+        });
+    });
+
+    // Validate form
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
+        const enteredCode = randomCodeInput.value.trim();
+
+        // Check empty fields
+        if (!name || !email || !subject || !message || !enteredCode) {
+
+            Swal.fire({
+                icon: "warning",
+                title: "Required Fields",
+                text: "Please complete all fields before submitting.",
+                confirmButtonColor: "#204B47"
+            });
+
+            return;
+        }
+
+        // Validate name
+        if (name.length < 2) {
+
+            Swal.fire({
+                icon: "warning",
+                title: "Invalid Name",
+                text: "Please enter a name with at least two characters.",
+                confirmButtonColor: "#204B47"
+            });
+
+            nameInput.focus();
+            return;
+        }
+
+        // Validate email format
+        const emailPattern =
+            /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        if (!emailPattern.test(email)) {
+
+            Swal.fire({
+                icon: "error",
+                title: "Invalid Email",
+                text: "Please enter a valid email address.",
+                confirmButtonColor: "#204B47"
+            });
+
+            emailInput.focus();
+            return;
+        }
+
+        // Validate random code (case-insensitive)
+        if (enteredCode.toUpperCase() !== generatedCode) {
+
+            Swal.fire({
+                icon: "error",
+                title: "Incorrect Security Code",
+                text: "The code you entered is incorrect. Please try again.",
+                confirmButtonColor: "#204B47"
+            });
+
+            generateRandomCode();
+            randomCodeInput.focus();
+            return;
+        }
+
+        // Check that Google reCAPTCHA is available and completed
+        if (
+            typeof grecaptcha === "undefined" ||
+            typeof grecaptcha.getResponse !== "function"
+        ) {
+            Swal.fire({
+                icon: "error",
+                title: "reCAPTCHA Not Loaded",
+                text: "Please check your Site Key, internet connection and domain settings.",
+                confirmButtonColor: "#204B47"
+            });
+
+            return;
+        }
+
+        const captchaResponse = grecaptcha.getResponse();
+
+        if (!captchaResponse) {
+
+            Swal.fire({
+                icon: "warning",
+                title: "Human Verification Required",
+                text: "Please tick the 'I'm not a robot' checkbox.",
+                confirmButtonColor: "#204B47"
+            });
+
+            return;
+        }
+
+        // Frontend validation demo only.
+        // A real submission requires backend processing.
+        Swal.fire({
+            icon: "success",
+            title: "Validation Successful!",
+            text: "All fields are valid and both verification checks passed.",
+            confirmButtonColor: "#204B47"
+        }).then(function () {
+
+            contactForm.reset();
+
+            // Generate a new code after resetting
+            generateRandomCode();
+
+            // Reset the Google reCAPTCHA checkbox
+            if (
+                typeof grecaptcha !== "undefined" &&
+                typeof grecaptcha.reset === "function"
+            ) {
+                grecaptcha.reset();
+            }
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>
+```

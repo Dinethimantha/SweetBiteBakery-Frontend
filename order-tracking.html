@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Order | Sweet Bite Bakery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="brand">
+                <div class="logo-placeholder">SB</div>
+                <div class="brand-text">
+                    <span class="brand-name">Sweet Bite</span>
+                    <span class="brand-subtitle">ARTISAN BAKERY</span>
+                </div>
+            </a>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
+    </nav>
+</header>
+
+<main class="tracking-container">
+
+    <section class="tracking-heading">
+        <p class="tracking-subtitle">SWEET BITE BAKERY</p>
+        <h1>Track Your Order</h1>
+        <p>Follow your order's progress from the bakery to your door.</p>
+    </section>
+
+    <section class="tracking-search">
+        <label for="tracking-number">Enter Your Order Number</label>
+
+        <div class="tracking-search-row">
+            <input
+                type="text"
+                id="tracking-number"
+                placeholder="Example: SB-123456"
+            >
+
+            <button type="button" id="track-order-btn">
+                Track Order
+            </button>
+        </div>
+    </section>
+
+    <section id="tracking-result" class="tracking-card" hidden>
+
+        <div class="tracking-order-header">
+            <div>
+                <p class="tracking-label">ORDER NUMBER</p>
+                <h2 id="display-order-number">-</h2>
+            </div>
+
+            <span id="current-status" class="status-badge">
+                Order Received
+            </span>
+        </div>
+
+        <div class="tracking-progress">
+
+            <div class="progress-line">
+                <div id="progress-line-fill"></div>
+            </div>
+
+            <div class="tracking-step">
+                <div class="step-circle">1</div>
+                <p>Order Received</p>
+            </div>
+
+            <div class="tracking-step">
+                <div class="step-circle">2</div>
+                <p>Preparing</p>
+            </div>
+
+            <div class="tracking-step">
+                <div class="step-circle">3</div>
+                <p>Out for Delivery</p>
+            </div>
+
+            <div class="tracking-step">
+                <div class="step-circle">4</div>
+                <p>Delivered</p>
+            </div>
+
+        </div>
+
+        <div class="tracking-message">
+            <h3 id="status-heading">Your order has been received!</h3>
+            <p id="status-description"></p>
+        </div>
+
+        <div class="tracking-order-details">
+            <p>
+                <strong>Customer:</strong>
+                <span id="tracking-customer">-</span>
+            </p>
+
+            <p>
+                <strong>Total:</strong>
+                <span id="tracking-total">-</span>
+            </p>
+
+            <p>
+                <strong>Payment:</strong>
+                <span id="tracking-payment">-</span>
+            </p>
+        </div>
+
+        
+
+        <div class="demo-controls">
+            <p><strong> Testing Controls</strong></p>
+            <p>Use this button to simulate the next delivery status.</p>
+
+            <button type="button" id="next-status-btn">
+                Move to Next Status
+            </button>
+        </div>
+
+    </section>
+
+    <p id="tracking-empty" class="tracking-empty" hidden>
+        We could not find that order. Please check the order number and try again.
+    </p>
+
+    <div class="tracking-back">
+        <a href="my-orders.html">Back to My Orders</a>
+        <a href="products.html">Continue Shopping</a>
+        <a href="index.html">Home</a>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> Sweet Bite Bakery. All rights reserved.</p>
+</footer>
+
+<script src="order-tracking.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>

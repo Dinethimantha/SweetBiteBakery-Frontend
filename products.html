@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Sweet Bite Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="brand">
+                <div class="logo-placeholder">SB</div>
+                <div class="brand-text">
+                    <span class="brand-name">Sweet Bite</span>
+                    <span class="brand-subtitle">ARTISAN BAKERY</span>
+                </div>
+            </a>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
+    </nav>
+</header>
+
+<main>
+    <section class="page-banner">
+        <p class="eyebrow">MADE WITH LOVE</p>
+        <h1>Our Delicious Products</h1>
+        <p>Discover freshly baked treats made for your special moments.</p>
+    </section>
+
+    <section class="page-section">
+        <div class="section-heading">
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Something Sweet for Everyone</h2>
+            <p>Choose your favourite category and explore our bakery treats.</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="birthday">Birthday Cakes</button>
+            <button class="filter-btn" data-category="wedding">Wedding Cakes</button>
+            <button class="filter-btn" data-category="cupcakes">Cupcakes</button>
+            <button class="filter-btn" data-category="pastries">Pastries</button>
+        </div>
+
+        <div id="product-list" class="product-grid"></div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div>
+        <h2>Sweet Bite Bakery</h2>
+        <p>Making life's sweetest moments even more special.</p>
+    </div>
+    <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <div>
+        <h3>Contact</h3>
+        <p>Colombo, Sri Lanka</p>
+        <p>Phone: +94 77 123 4567</p>
+        <p>Email: sweetbite@example.com</p>
+    </div>
+    <p class="copyright">© <span class="current-year"></span> Sweet Bite Bakery. All rights reserved.</p>
+</footer>
+
+<script src="cart.js"></script>
+<script src="products.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

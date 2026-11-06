@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmation | Sweet Bite Bakery</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="order-confirmation.js" defer></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="brand">
+                <div class="logo-placeholder">SB</div>
+                <div class="brand-text">
+                    <span class="brand-name">Sweet Bite</span>
+                    <span class="brand-subtitle">ARTISAN BAKERY</span>
+                </div>
+            </a>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
+    </nav>
+</header>
+
+    <main class="order-confirmation-container">
+
+        <section class="order-success-header">
+            <div class="success-icon">&#10003;</div>
+
+            <h1>Thank You for Your Order!</h1>
+
+            <p>
+                Your order has been recorded successfully.
+                Thank you for choosing Sweet Bite Bakery.
+            </p>
+
+            <p id="confirmation-order-number" class="order-number">
+                Order Number: Loading...
+            </p>
+        </section>
+
+        <div id="confirmation-content">
+
+            <section class="checkout-card">
+                <p>Loading your order details...</p>
+            </section>
+
+        </div>
+
+        <div class="confirmation-actions">
+            <a href="products.html" class="btn btn-primary">
+                Continue Shopping
+            </a>
+
+            <a href="index.html" class="back-to-cart">
+                Back to Home
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="current-year"></span>
+            Sweet Bite Bakery. All rights reserved.
+        </p>
+    </footer>
+    <script src="cart.js"></script>
+
+</body>
+</html>

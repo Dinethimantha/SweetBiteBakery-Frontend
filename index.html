@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweet Bite Bakery | Colombo, Sri Lanka</title>
+    <meta name="description" content="Discover delicious cakes, cupcakes and pastries at Sweet Bite Bakery in Colombo, Sri Lanka.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="cart.js" defer></script>
+    <script src="script.js" defer></script>
+
+    
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="brand">
+                <div class="logo-placeholder">SB</div>
+                <div class="brand-text">
+                    <span class="brand-name">Sweet Bite</span>
+                    <span class="brand-subtitle">ARTISAN BAKERY</span>
+                </div>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+            <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="cart.html" class="cart-link">
+                    Cart <span id="cart-count">0</span>
+                </a>
+                <a href="products.html" class="nav-order-btn">Order Now</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+
+                <div class="hero-content">
+                    <span class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        FRESHLY BAKED IN COLOMBO
+                    </span>
+
+                    <h1>A Little Bite of <span>Happiness.</span></h1>
+
+                    <p class="hero-description">
+                        From beautiful celebration cakes to your favourite
+                        everyday treats, every bite is made with care,
+                        quality ingredients and a whole lot of love.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="products.html" class="btn btn-caramel">
+                            Explore Our Products <span>→</span>
+                        </a>
+                        <a href="about.html" class="btn btn-outline-light">
+                            Our Story
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="hero-note-line"></span>
+                        Made fresh. Shared with love.
+                    </div>
+                </div>
+
+                <div class="hero-image-wrap">
+                    <div class="hero-image-frame">
+                        <img
+                            src="images/hero-cake.jpg"
+                            alt="Freshly baked cake"
+                            class="hero-image"
+                        >
+                    </div>
+
+                    <div class="hero-image-label">
+                        <span class="label-small">BAKED WITH LOVE</span>
+                        <span class="label-large">Every single day.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="highlights">
+            <div class="container highlights-grid">
+
+                <div class="highlight-item">
+                    <span class="highlight-number">01</span>
+                    <div>
+                        <h3>Freshly Baked</h3>
+                        <p>Made fresh for better taste.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <span class="highlight-number">02</span>
+                    <div>
+                        <h3>Quality Ingredients</h3>
+                        <p>Carefully chosen ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <span class="highlight-number">03</span>
+                    <div>
+                        <h3>Made for Moments</h3>
+                        <p>Sweet treats for every occasion.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories section-padding">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">FIND YOUR FAVOURITE</span>
+                        <h2>Something Sweet <span>for Everyone.</span></h2>
+                    </div>
+                    <a href="products.html" class="text-link">View All Products →</a>
+                </div>
+
+                <div class="category-grid">
+
+                    <a href="products.html#birthday" class="category-card">
+                        <div class="category-image">
+                            <img src="images/birthday-cake.jpg" alt="Birthday cakes">
+                            <span class="category-number">01</span>
+                        </div>
+                        <div class="category-info">
+                            <div>
+                                <h3>Birthday Cakes</h3>
+                                <p>Make their day extra special.</p>
+                            </div>
+                            <span class="category-arrow">↗</span>
+                        </div>
+                    </a>
+
+                    <a href="products.html#wedding" class="category-card">
+                        <div class="category-image">
+                            <img src="images/wedding-cake.jpg" alt="Wedding cakes">
+                            <span class="category-number">02</span>
+                        </div>
+                        <div class="category-info">
+                            <div>
+                                <h3>Wedding Cakes</h3>
+                                <p>For your most special moments.</p>
+                            </div>
+                            <span class="category-arrow">↗</span>
+                        </div>
+                    </a>
+
+                    <a href="products.html#cupcakes" class="category-card">
+                        <div class="category-image">
+                            <img src="images/cupcakes.jpg" alt="Cupcakes">
+                            <span class="category-number">03</span>
+                        </div>
+                        <div class="category-info">
+                            <div>
+                                <h3>Cupcakes</h3>
+                                <p>Small treats, big happiness.</p>
+                            </div>
+                            <span class="category-arrow">↗</span>
+                        </div>
+                    </a>
+
+                    <a href="products.html#pastries" class="category-card">
+                        <div class="category-image">
+                            <img src="images/pastries.jpg" alt="Fresh pastries">
+                            <span class="category-number">04</span>
+                        </div>
+                        <div class="category-info">
+                            <div>
+                                <h3>Pastries</h3>
+                                <p>Your everyday moment of joy.</p>
+                            </div>
+                            <span class="category-arrow">↗</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured section-padding">
+            <div class="container">
+
+                <div class="section-heading centered-heading">
+                    <span class="section-kicker">CUSTOMER FAVOURITES</span>
+                    <h2>Our Most Loved <span>Treats.</span></h2>
+                    <p>
+                        Discover delicious treats for your next celebration
+                        or a little everyday happiness.
+                    </p>
+                </div>
+
+                <div class="featured-grid">
+
+                    <article class="product-card">
+                        <a href="products.html" class="product-image">
+                            <img src="images/Chocolate Celebration Cake.jpg" alt="Chocolate celebration cake">
+                            <span class="product-tag">BESTSELLER</span>
+                        </a>
+                        <div class="product-details">
+                            <span class="product-category-label">BIRTHDAY CAKES</span>
+                            <h3>Chocolate Celebration Cake</h3>
+                            <p>Rich chocolate layers with a creamy finish.</p>
+                            <div class="product-bottom">
+                                <strong>LKR 4,500</strong>
+                                <button class="add-cart" type="button" onclick="addToCart(1)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <a href="products.html" class="product-image">
+                            <img src="images/wedding-cake.jpg" alt="Elegant wedding cake">
+                            <span class="product-tag teal-tag">SPECIAL OCCASION</span>
+                        </a>
+                        <div class="product-details">
+                            <span class="product-category-label">WEDDING CAKES</span>
+                            <h3>Elegant Wedding Cake</h3>
+                            <p>A beautiful centrepiece for your special day.</p>
+                            <div class="product-bottom">
+                                <strong>LKR 18,000</strong>
+                                <button class="add-cart" type="button" onclick="addToCart(5)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <a href="products.html" class="product-image">
+                            <img src="images/vanilla dream cupcakes.jpg" alt="Vanilla cupcakes">
+                            <span class="product-tag">FAVOURITE</span>
+                        </a>
+                        <div class="product-details">
+                            <span class="product-category-label">CUPCAKES</span>
+                            <h3>Vanilla Dream Cupcakes</h3>
+                            <p>Soft vanilla cupcakes with creamy frosting.</p>
+                            <div class="product-bottom">
+                                <strong>LKR 1,200</strong>
+                                <button class="add-cart" type="button" onclick="addToCart(7)">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="featured-cta">
+                    <a href="products.html" class="btn btn-dark">Explore the Full Menu →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-us section-padding">
+            <div class="container why-grid">
+
+                <div class="why-image">
+                    <img src="images/pastries.jpg" alt="Fresh bakery pastries">
+                    <div class="why-image-badge">
+                        <span>OUR PROMISE</span>
+                        <strong>Quality in every bite.</strong>
+                    </div>
+                </div>
+
+                <div class="why-content">
+                    <span class="section-kicker">THE SWEET BITE DIFFERENCE</span>
+                    <h2>More Than Just a <span>Bakery.</span></h2>
+
+                    <p class="why-intro">
+                        We believe that the best memories are often made
+                        around something delicious. That's why we put care
+                        into every cake, cupcake and pastry we prepare.
+                    </p>
+
+                    <div class="why-feature">
+                        <span class="feature-icon">01</span>
+                        <div>
+                            <h3>Made with Care</h3>
+                            <p>Every treat is prepared with attention to detail.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-feature">
+                        <span class="feature-icon">02</span>
+                        <div>
+                            <h3>For Every Occasion</h3>
+                            <p>From everyday snacks to special celebrations.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-feature">
+                        <span class="feature-icon">03</span>
+                        <div>
+                            <h3>A Personal Touch</h3>
+                            <p>We want every order to feel special to you.</p>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn btn-dark">Discover Our Story →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Customer Reviews -->
+        <section class="testimonials section-padding" id="customer-reviews">
+            <div class="container">
+
+                <div class="section-heading centered-heading">
+                    <span class="section-kicker">CUSTOMER FEEDBACK</span>
+                    <h2>Made with Love, <span>Shared with Joy.</span></h2>
+                    <p>Explore sample reviews and share your own experience.</p>
+                </div>
+
+                
+
+                <div class="reviews-rating-summary">
+                    <span class="stars">★★★★★</span>
+                    <p>Star ratings </p>
+                </div>
+
+                
+
+            
+            </div>
+        </section>
+
+        <!-- Submit a Review -->
+        <section class="review-form-section" id="submit-review">
+            <div class="review-form-container">
+
+                <h2>Share Your Experience</h2>
+                <p class="review-form-description">
+                    Tell us what you think about our products or website.
+                </p>
+
+                <form id="review-form">
+
+                    <div class="form-group">
+                        <label for="review-name">Your Name</label>
+                        <input
+                            type="text"
+                            id="review-name"
+                            placeholder="Enter your name"
+                            maxlength="60"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review-product">Product or Experience</label>
+                        <select id="review-product" required>
+                            <option value="">Select an option</option>
+                            <option value="Birthday Cake">Birthday Cake</option>
+                            <option value="Wedding Cake">Wedding Cake</option>
+                            <option value="Cupcakes">Cupcakes</option>
+                            <option value="Pastries">Pastries</option>
+                            <option value="Website Experience">Website Experience</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="rating-field">
+                        <legend>Your Star Rating</legend>
+
+                        <div class="review-star-rating">
+                            <input type="radio" id="star-5" name="rating" value="5" required>
+                            <label for="star-5" title="5 stars">★</label>
+
+                            <input type="radio" id="star-4" name="rating" value="4">
+                            <label for="star-4" title="4 stars">★</label>
+
+                            <input type="radio" id="star-3" name="rating" value="3">
+                            <label for="star-3" title="3 stars">★</label>
+
+                            <input type="radio" id="star-2" name="rating" value="2">
+                            <label for="star-2" title="2 stars">★</label>
+
+                            <input type="radio" id="star-1" name="rating" value="1">
+                            <label for="star-1" title="1 star">★</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="review-feedback">Your Feedback</label>
+                        <textarea
+                            id="review-feedback"
+                            placeholder="Write your feedback here..."
+                            minlength="3"
+                            maxlength="500"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="review-submit-btn">
+                        Submit Review
+                    </button>
+
+                    <p
+                        id="review-message"
+                        class="review-form-message"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+                
+
+            </div>
+        </section>
+
+        <!-- Submitted Reviews -->
+        <section class="submitted-reviews-section">
+            <div class="container">
+
+                <h2 class="submitted-reviews-heading">Customer Reviews</h2>
+<p class="submitted-reviews-subtitle">
+    See what people have shared about Sweet Bite Bakery.
+</p>
+
+                <div id="submitted-reviews" class="testimonial-grid">
+                    <p class="submitted-reviews-empty">
+                        No reviews submitted yet.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container cta-container">
+                <div>
+                    <span class="section-kicker">LET'S MAKE IT SWEETER</span>
+                    <h2>Have a special moment <span>coming up?</span></h2>
+                    <p>Let's find the perfect treat for your celebration.</p>
+                </div>
+
+                <a href="contact.html" class="btn btn-caramel">Get in Touch →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="brand footer-logo">
+                    <div class="logo-placeholder footer-logo-placeholder">SB</div>
+                    <div class="brand-text">
+                        <span class="brand-name">Sweet Bite</span>
+                        <span class="brand-subtitle">ARTISAN BAKERY</span>
+                    </div>
+                </a>
+
+                <p>
+                    Bringing sweetness to your everyday moments
+                    and life's most special celebrations.
+                </p>
+
+                <span class="footer-tagline">Freshly baked with love.</span>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Customer Care</h3>
+                <a href="products.html">Our Products</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="contact.html">Custom Cake Orders</a>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Visit Sweet Bite</h3>
+                <p>Colombo, Sri Lanka</p>
+                <p>Phone: +94 XX XXX XXXX</p>
+                <p>Email: hello@sweetbite.lk</p>
+                <a href="contact.html" class="footer-contact-link">Contact Us →</a>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>
+                &copy; <span id="current-year">2026</span>
+                Sweet Bite Bakery. All rights reserved.
+            </p>
+            <p>Made with care in Colombo, Sri Lanka.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
